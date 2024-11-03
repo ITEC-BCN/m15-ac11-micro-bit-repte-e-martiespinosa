@@ -5,7 +5,7 @@ y = 0
 
 def on_forever():
     temperatura_actual = input.temperature()
-    temperatura_maxima = 30
+    temperatura_maxima = 50
     basic.clear_screen()
     led.plot_bar_graph(temperatura_actual, temperatura_maxima)
 
@@ -22,6 +22,7 @@ def on_forever():
     acc_x = input.acceleration(Dimension.X)
     acc_y = input.acceleration(Dimension.Y)
 
+    global x, y
     if acc_x <= 150 and x > 0:
         x -= 1
     if acc_x > 150 and x < 4:
